@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static  %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/cv-page.css' %}">
+{% endblock css_files %}
+
+{% block title  %}CV{% endblock title  %}
+
+{% block body %}
+
+
+<div class="cv-container">
+  {% for cv in cv %}
+    {% include "blog/includes/cv-button.html" with cv=cv %}
+  {% endfor %}
+</div>
+
+{% endblock body %}

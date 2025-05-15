@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static  %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/refrence.css' %}">
+{% endblock css_files %}
+
+{% block title  %}Refrences{% endblock title  %}
+
+{% block body %}
+<div class="coverletter_wrapper">
+  <div class="name_pic">
+    <h1> {{coverletter.my_name}} </h1>
+    <img class="profile_pic" src="{{coverletter.picture.url}}" alt="my_pic">
+  </div>
+  <p class="coverletter"> {{coverletter.coverletter | linebreaksbr}} </p>
+</div>
+
+<div class="ref-wrapper">
+{% for refrences in refrences %}
+  {% include "blog/includes/refrence-box.html" with refrencez=refrences %}
+{% endfor %}
+</div>
+{% endblock body %}

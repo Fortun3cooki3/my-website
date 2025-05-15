@@ -1,0 +1,18 @@
+{% load static %}
+
+
+
+  <div class="work-box">
+    <a class="work-link" href="{{ cv.url | default:"http://www.linkedin.com/in/merlijn-wolters-0b3450140" }}" target="_blank">
+      <img class="work-logo" src="{{ cv.image.url }}" alt="workspace">
+    </a>
+    <h1>{{ cv.title }}</h1>
+    <p class="work-experience"> {{ cv.description }}
+    </p>
+    <p class="skills">  {% for skill in cv.skills.all %}
+      {{ skill.skills }}{% if not forloop.last %}, {% endif %}
+      {% endfor %} </p>
+    <date> {{ cv.start_date|date:"F Y"}} - {{cv.end_date|date:"F Y"}}</date>
+  </div>
+
+

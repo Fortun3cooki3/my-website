@@ -1,0 +1,15 @@
+{% load static %}
+
+
+
+<li class=project-box>
+  <article class="post">
+    <a class=project-box-click href="{{ projects.get_absolute_url }}">
+      <img class=project-pic src="{{ projects.image.url }}" alt="{{ projects.title}}">
+      <h2>{{ projects.title }}</h2>
+      <p>{{ projects.description | linebreaksbr }}</p>
+    </a>
+  </article>
+</li>
+
+  

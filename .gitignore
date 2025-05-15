@@ -1,0 +1,7 @@
+.ebextensions
+__pycache__
+venv/
+.venv
+Procfile
+images
+collectstatic

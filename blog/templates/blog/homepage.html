@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/homepage.css' %}">
+{% endblock css_files %}
+
+{% block title  %}Homepage{% endblock title  %}
+{% block body %}
+
+<!-- main content -->
+
+      <div class="content">
+        <div class="who-is">
+          <h1>{{ webinfo.webliner }}</h1>
+          <p>{{ webinfo.webinfo | linebreaksbr}}</p>
+        </div>
+      </div>
+
+      <!-- post boxes -->
+        <div class="posts">
+          <div class="latest-posts">
+    
+            <div class="post-one">
+              <a href="{% url 'work_experience' %}">
+              <div class="post-box">
+                <img class="blog-pic" src="{% static "blog/images/cv.png" %}" alt="Cv">
+                <p><strong>Work experience</strong></p>
+              </div>
+              </a>
+            </div>
+          
+            <div class="post-two">
+              <a href="{% url 'projects' %}">
+              <div class="post-box">
+                <img class="blog-pic" src="{% static "blog/images/project.png" %}" alt="Projects">
+                <p><strong>Projects</strong></p>
+              </div>
+              </a>
+            </div>
+
+            <div class="post-three">
+              <a href="{% url 'cover_letter' %}">
+              <div class="post-box">
+               <img class="blog-pic" src="{% static "blog/images/letter.png" %}" alt="Cover_letter">
+                <p><strong>Cover letter</strong></p>
+              </div>
+              </a>
+            </div>
+            </div>
+          </div>
+        </div>
+
+     
+
+
+
+          
+    {% endblock body %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/project.css' %}">
+{% endblock css_files %}
+
+{% block title %}{{ title }}{% endblock title  %}
+
+{% block body %}
+<div class="project_wrapper">
+<img src="{{ image.url }}" alt="{{ title }}">
+<h1> {{ title }} </h1>
+<p> {{ full_description }} </p>
+<div class="project_links">
+<a class="website" href="{{ url }}" target="_blank"> <img class="web-img" src="{% static "blog/images/website.png" %}" alt="website"> </a>
+<a class="github" href="{{ git_hub }}" target="_blank"> <img class="git-img" src="{% static "blog/images/github.png" %}" alt="github"> </a>
+</div>
+<div>
+
+{% endblock body%} 
