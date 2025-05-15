@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-h#5o1%tp$3%mct+ixrl=gzmhm6m^k3m4c#nvxb1$=t^h0o%c(q"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
   "*"
@@ -39,8 +39,8 @@ CSRF_TRUSTED_ORIGINS=['https://mvdmeer-site-f4ab49af64b1.herokuapp.com']
 
 INSTALLED_APPS = [
     "blog",
-    "cloudinary_storage",
-    "cloudinary",
+   # "cloudinary_storage",
+   # "cloudinary",
     "whitenoise.runserver_nostatic",
     "django.contrib.admin",
     "django.contrib.auth",
