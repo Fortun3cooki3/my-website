@@ -21,7 +21,7 @@ class SupabaseStorage(Storage):
         return ContentFile(r.content)
 
     def _save(self, name, content):
-        full_path = f"media/{name}"
+        full_path = name
         r = httpx.post(
             f"{self.url}/storage/v1/object/{self.bucket}/{full_path}",
             headers=self.headers,
@@ -32,4 +32,4 @@ class SupabaseStorage(Storage):
         return full_path
 
     def url(self, name):
-        return f"{self.url}/storage/v1/object/public/{self.bucket}/media/{name}"
+        return f"{self.url}/storage/v1/object/public/{self.bucket}/{name}"
