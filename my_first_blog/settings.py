@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 from os import getenv
-import cloudinary
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,8 +38,6 @@ CSRF_TRUSTED_ORIGINS=['https://mvdmeer-site-f4ab49af64b1.herokuapp.com']
 
 INSTALLED_APPS = [
     "blog",
-   # "cloudinary_storage",
-   # "cloudinary",
     "whitenoise.runserver_nostatic",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -91,23 +88,19 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "postgres",
-        "USER":"postgres.xxqakxynsljozechktxq",
-        "PASSWORD":"Iliveonthegroesbeeksedwarsweg90",
-        "HOST":"aws-0-eu-west-2.pooler.supabase.com",
-        "PORT":"6543",
+        "USER": "postgres.xxqakxynsljozechktxq",
+        "PASSWORD": "Iliveonthegroesbeeksedwarsweg90",
+        "HOST": "aws-0-eu-west-2.pooler.supabase.com",
+        "PORT": "6543",
          'OPTIONS': {
             'sslmode': 'require',
         },
     }
 }
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dm4wpxvhi',
-    'API_KEY': 'y675481227659143',
-    'API_SECRET': 'youCBwSwK9T-aAdP9HBZRejbsnJvYY',
-}
-
-
+SUPABASE_URL = "https://xxqakxynsljozechktxq.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4cWFreHluc2xqb3plY2hrdHhxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NjUzMTQwMiwiZXhwIjoyMDYyMTA3NDAyfQ.eSxVOgqWUyX90UqgpqYfmN8sqUC-49_a0jiZifXVjTY"
+SUPABASE_BUCKET = "mvdmeer-images"  
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -162,8 +155,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = "storage.supabase_storage.SupabaseStorage"
 
 
 
