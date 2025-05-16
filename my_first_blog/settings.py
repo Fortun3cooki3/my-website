@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-from os import getenv
+from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,8 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-h#5o1%tp$3%mct+ixrl=gzmhm6m^k3m4c#nvxb1$=t^h0o%c(q"
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -32,8 +34,7 @@ ALLOWED_HOSTS = [
   "*"
 ]
 
-CSRF_TRUSTED_ORIGINS=['https://mvdmeer-site-f4ab49af64b1.herokuapp.com']
-
+CSRF_TRUSTED_ORIGINS= config("CSRF_TRUSTED_ORIGINS")
 # Application definition
 
 INSTALLED_APPS = [
@@ -88,8 +89,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "postgres",
-        "USER": "postgres.xxqakxynsljozechktxq",
-        "PASSWORD": "Iliveonthegroesbeeksedwarsweg90",
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASSWORD"),
         "HOST": "aws-0-eu-west-2.pooler.supabase.com",
         "PORT": "6543",
          'OPTIONS': {
@@ -98,9 +99,9 @@ DATABASES = {
     }
 }
 
-SUPABASE_URL = "https://xxqakxynsljozechktxq.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4cWFreHluc2xqb3plY2hrdHhxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NjUzMTQwMiwiZXhwIjoyMDYyMTA3NDAyfQ.eSxVOgqWUyX90UqgpqYfmN8sqUC-49_a0jiZifXVjTY"
-SUPABASE_BUCKET = "mvdmeer-images"  
+SUPABASE_URL = config("SUPABASE_URL")
+SUPABASE_KEY = config("SUPABASE_KEY")
+SUPABASE_BUCKET = config("SUPABASE_BUCKET")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
