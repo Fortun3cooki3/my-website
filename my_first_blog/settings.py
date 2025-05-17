@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 from decouple import config
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -34,7 +33,10 @@ ALLOWED_HOSTS = [
   "*"
 ]
 
-CSRF_TRUSTED_ORIGINS= config("CSRF_TRUSTED_ORIGINS")
+CSRF_TRUSTED_ORIGINS = [
+  "https://mvdmeer-site-f4ab49af64b1.herokuapp.com",
+  "https://localhost:8000",
+]
 # Application definition
 
 INSTALLED_APPS = [

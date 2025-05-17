@@ -22,7 +22,7 @@ class SupabaseStorage(Storage):
 
     def _save(self, name, content):
         full_path = name
-        r = httpx.post(
+        r = httpx.put(
             f"{self.url}/storage/v1/object/{self.bucket}/{full_path}",
             headers=self.headers,
             content=content.read()
