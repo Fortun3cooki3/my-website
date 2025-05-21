@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
-from .supabase_storage import SupabaseStorage
+
 
 # Create your models here.
 
