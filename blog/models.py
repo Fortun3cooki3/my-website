@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
-from supabase_storage import SupabaseStorage
+from .supabase_storage import SupabaseStorage
 
 # Create your models here.
 
@@ -18,7 +18,7 @@ class Projects(models.Model):
   full_description = models.TextField(blank=True)
   url = models.URLField(blank=True, default="https://www.linkedin.com/in/merlijn-wolters-0b3450140/")
   git_hub = models.URLField(blank=True, default="https://www.linkedin.com/in/merlijn-wolters-0b3450140/")
-  image = models.ImageField(null=True, blank=True, upload_to='media/')
+  image = models.URLField(null=True, blank=True)
   slug = models.SlugField( default= "", null=False, blank=True, db_index=True)
 
   def get_absolute_url(self):
@@ -32,7 +32,7 @@ class Cv (models.Model):
   title = models.CharField(max_length=50)
   description = models.TextField()
   url = models.URLField(null=True, blank=True)
-  image = models.ImageField(null=True, blank=True, upload_to='media/')
+  image = models.URLField(null=True, blank=True)
   skills = models.ManyToManyField(Skills)
   start_date = models.DateField(null=True, blank=True)
   end_date = models.DateField(null=True, blank=True)
@@ -42,7 +42,7 @@ class Cv (models.Model):
   
 class CoverLetter(models.Model):
   my_name = models.CharField(max_length=50)
-  picture = models.ImageField(null=True, blank=True, upload_to='media/')
+  picture = models.URLField(null=True, blank=True)
   coverletter = models.TextField(blank=True)
 
   def __str__(self):

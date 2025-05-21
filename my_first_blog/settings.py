@@ -158,7 +158,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-DEFAULT_FILE_STORAGE = "supabase_storage_SupabaseStorage"
+#DEFAULT_FILE_STORAGE = "blog.supabase_storage.SupabaseStorage"
 
 
 
