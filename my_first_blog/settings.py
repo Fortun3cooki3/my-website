@@ -86,11 +86,11 @@ WSGI_APPLICATION = "my_first_blog.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": config("NAME"),
+        "NAME": "postgres",
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_PASSWORD"),
-        "HOST": config("HOST"),
-        "PORT": config("PORT"),
+        "HOST": "aws-0-eu-west-2.pooler.supabase.com",
+        "PORT": "6543",
          'OPTIONS': {
             'sslmode': 'require',
         },
