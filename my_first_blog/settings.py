@@ -89,7 +89,7 @@ DATABASES = {
         "NAME": "postgres",
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_PASSWORD"),
-        "HOST": "aws-0-eu-west-2.pooler.supabase.com",
+        "HOST": config("HOST"),
         "PORT": "6543",
          'OPTIONS': {
             'sslmode': 'require',
