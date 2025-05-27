@@ -41,7 +41,6 @@
   justify-items: center;
   align-items: start;
   text-align: center;
-  grid-auto-rows: 1fr;
   color :rgb(33, 37, 41);
   margin: 0 auto;
   margin-bottom: 100px;
