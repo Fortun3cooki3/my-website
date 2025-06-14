@@ -97,9 +97,7 @@ DATABASES = {
     }
 }
 
-SUPABASE_URL = config("SUPABASE_URL")
-SUPABASE_KEY = config("SUPABASE_KEY")
-SUPABASE_BUCKET = config("SUPABASE_BUCKET")
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
