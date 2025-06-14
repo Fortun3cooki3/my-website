@@ -29,10 +29,10 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = ["mvdmeer-site-f4ab49af64b1.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = [".vercel.app", "localhost"]
 
 
-CSRF_TRUSTED_ORIGINS = ["https://mvdmeer-site-f4ab49af64b1.herokuapp.com"]
+CSRF_TRUSTED_ORIGINS = [".vercel.app"]
 # Application definition
 
 INSTALLED_APPS = [
