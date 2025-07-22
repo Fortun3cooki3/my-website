@@ -32,7 +32,7 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 ALLOWED_HOSTS = [".vercel.app", "localhost", ".now.sh"]
 
 
-CSRF_TRUSTED_ORIGINS = ["https://my-website-dusky-seven.vercel.app"]
+CSRF_TRUSTED_ORIGINS = ["https://my-website-dusky-seven.vercel.app", "https://merlijnvdmeer-dusky-seven.vercel.app"]
 # Application definition
 
 INSTALLED_APPS = [
