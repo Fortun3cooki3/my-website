@@ -5,6 +5,20 @@
 <link rel="stylesheet" href="{% static 'blog/homepage.css' %}">
 {% endblock css_files %}
 
+{% block meta %}
+
+<meta name="description" content="Everything you need to know about my experience and projects.">
+ 
+\
+<!-- Open Graph (LinkedIn, Facebook, etc.) -->
+<meta property="og:title" content="Merlijn van der Meer">
+<meta property="og:image" content="{% static 'blog/images/duck.png' %}">
+<meta property="og:description" content="Everything you need to know about my experience and projects.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://merlijnvdmeer.vercel.app">
+
+{% endblock meta %}
+
 {% block title  %}Homepage{% endblock title  %}
 {% block body %}
 
