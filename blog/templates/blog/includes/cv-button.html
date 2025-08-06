@@ -7,7 +7,7 @@
       <img class="work-logo" src="{{ cv.image }}" alt="workspace">
     </a>
     <h1>{{ cv.title }}</h1>
-    <p class="work-experience"> {{ cv.description }}
+    <p class="work-experience"> {{ cv.description | linebreaksbr }}
     </p>
     <p class="skills">  {% for skill in cv.skills.all %}
       {{ skill.skills }}{% if not forloop.last %}, {% endif %}
