@@ -11,7 +11,7 @@
         <title>{% block title %}Welcome{% endblock title %}</title>
         {% block css_files %}
         {% endblock css_files %}
-        
+
         {% block meta %}
         {% endblock meta %}
     </head>
@@ -19,8 +19,10 @@
     <body>
       <!-- main bar -->
         <div class="main-bar">
+          
             <div class="picture">
-              <img class="profile-pic"src="{{ coverletter.picture }}" alt="Profile Picture"></div>
+              <img class="profile-pic"src="{{ coverletter.picture }}" alt="Profile Picture">
+            </div>
             
                 <div class="name">
                     <a class="name" href="{% url 'homepage' %}">Merlijn van der Meer</a>
